@@ -1,0 +1,37 @@
+.dolt
+{
+font-style: italic;    
+}
+
+.vastag
+{
+    font-weight: bold;
+}
+
+.vastagdolt
+{
+font-weight: bold;
+font-style: italic;
+}
+
+.kocka
+{
+    border-style: solid;
+    border-width: medium;
+}
+
+.slim
+{
+font: 0.9em sans-serif;
+font-weight: lighter;
+font-style: italic;
+}
+
+.back
+{
+    background-color: gray;
+}
+
+div
+{
+}
