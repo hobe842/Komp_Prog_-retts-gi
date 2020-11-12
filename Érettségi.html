@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
         <title>Emeltszintű Informatikai éretségi javítás</title>
     </head>
     <body>
@@ -13,7 +13,7 @@
         <p><h2>Gyakorlati vizsga</h2></p> 
         <p><h2>Javítási-Értékelési<br>Útmutató</h2></p>
         <p><h3>Fontos tudnivalók</h3></p>
-        <p>A feladatok értékelése a javítási-értékelési útmutatóban megadott pontozás szerint történik.
+        <p> feladatok értékelése a javítási-értékelési útmutatóban megadott pontozás szerint történik.
             A javítási-értékelési útmutatóban a nagyobb logikai egységek azonosítását a keretezett részben
             található szövegek segítik. A keretezés nélküli sorokban egyrészt az adható pontok találhatók,
             másrészt utalásokat talál arra nézve, hogy milyen esetekben adható, illetve nem adható meg az
@@ -45,8 +45,8 @@
             <p>Teljes értékű megoldásnak számít, ha jó stílusok használatával formázta a weblapot vagy
             a vizsgázó a tageket helyesen paraméterezte.<br>
             A kép szövegbe illesztése csak relatív útvonalmegadás esetén fogadható el.</p>
-            <p class="kocka">A <div id="dolt">szerkezet.png</div> képállomány elkészítése </p>
-            <p>Képállomány <div id="dolt">szerkezet.png</div> néven létezik, és a mérete 400×337
+            <p class="kocka">A <a class="dolt">szerkezet.png</a> képállomány elkészítése </p>
+            <p>Képállomány <a class="dolt">szerkezet.png</a> néven létezik, és a mérete 400×337
             képpont <br>
             Az egyik felirat megfelelő szöveggel az épület alsó szintjén szerepel <br>
             Mind a két felirat megfelelő szöveggel az épület alsó szintjén szerepel a
@@ -56,35 +56,35 @@
             kitakar. </p>
             <p class="kocka">Létezik passzivhaz.html néven weblap, és az oldalbeállításai
             helyesek </p>
-            <p>Létezik  <div id="dolt">passzivhaz.html</div> néven weblap, háttérképe a <a class="dolt">bg.png</a> kép </p>
+            <p>Létezik  <a class="dolt">passzivhaz.html</a> néven weblap, háttérképe a <a class="dolt">bg.png</a> kép </p>
             <p>A linkek színe minden állapotban a megadott kékeszöld (#008080 kódú
             szín)<br>
             A weblap teljes szövege Verdana betűtípusú és fekete (alapértelmezett)
             színű <br>
-            A böngésző keretén megjelenő cím <div id="dolt">„Passzívházak”</div> </p>
+            A böngésző keretén megjelenő cím <a class="vastagdolt">„Passzívházak”</a> </p>
             <p class="kocka">Az oldal vázának kialakítása </p>
             <p>Az oldal tartalma 850 képpont széles téglalapban jelenik meg <br>
                 A pont jár, ha megadott szélességű téglalap vagy blokk adja az oldal
                 vázát.
                 Például: <br>
-                <div id="dolt"><div id="tartalom"></div></div><br>
+                <a class="dolt">&lt;div id="tartalom"&gt;</a><br>
                 és <br>
-                <div id="dolt">#tartalom {width: 850px;}</div>
+                <a class="dolt">#tartalom {width: 850px;}</a> <br>
                 vagy <br>
-                <div id="dolt"><table width="850"></table></div><br>
+                <a class="dolt">&lt;table width="850"&gt;</a><br>
                 A téglalap fehér színű, vízszintesen középre igazított és körülötte,
                 valamint benne szegély nem jelenik meg <br>
                 A szöveges tartalom a téglalap bal és jobb szélétől 10 képponttal beljebb
                 jelenik meg <br>
                 Példá <br>
-                <div id="tartalom"><br>
+                <a class="dolt">&lt;div id="tartalom"&gt;</a><br>
                 és <br>
-                #tartalom {padding: 0px 10px;} <br>
+                <a class="dolt">#tartalom {padding: 0px 10px;}</a> <br>
                 vagy <br>
-                <table cellpadding="10"> <br>
+                <a class="dolt">&lt;table cellpadding="10"&gt;</a> <br>
                 A pont jár akkor is, ha mind a négy belső margót 10px értékűre állította. </p>
             <p class="kocka">A szöveg formázása </p>
-            <p>A <div id="dolt">passzfor.txt</div> állományból a teljes szöveget beillesztette a
+            <p>A <a class="dolt">passzfor.txt</a> állományból a teljes szöveget beillesztette a
                 téglalapba, és a karakterek kódolása helyes, a szimbólumok helyesen
                 jelennek meg <br>
                 A szöveg tagolása a mintának megfelel <br>
@@ -92,16 +92,103 @@
                 Egy bekezdés sorkizárt igazítású <br>
                 A minta szerinti összes bekezdés sorkizárt igazítású
                 A pont jár abban az esetben, ha a címek és a felsorolások balra igazítottak.  <br>
-                A szöveg elején „<div id="dolt">dr. Wolfgang Feist</div>” neve 16 képpontos betűméretű és
+                A szöveg elején „<a class="dolt">dr. Wolfgang Feist</a>” neve 16 képpontos betűméretű és
                 dőlt betűstílusú  <br>
                 A mintának megfelelő négy bekezdése számozatlan felsorolású <br>
                 A szöveg 6 mértékegysége közül egynél megfelelően állította az alsó
                 vagy a felső indexet <br>
                 Mind a hat mértékegységnél megfelelően állította az alsó és a felső
                 indexet </p>
-            <p></p>
-            <p></p>
-            
+            <p class="kocka">A cím és az alcímek formázása </p>
+            <p>A cím, a <a class="back">„Passzívházak”</a> egyes szintű címsor stílussal jelenik meg <br>
+            A hét alcím kettes szintű címsor stílussal jelenik meg <br>
+            A cím és a hét alcím sötétzöld (#347235 kódú szín) <br>
+            A hét alcím betűmérete 17 képpontos <br>
+            A pontok járnak, ha hat alcímnél a beállítások helyesek.
+            A cím után vízszintes vonal van <br>
+            A vonal 60% széles és középre igazított</p>
+            <p class="kocka">A <a class="dolt">szerkezet.png</a> állomány beszúrása és formázása </p>
+            <p>A weblapon a szerkezet.png vagy a szerkalap.png képállomány
+                jelenik meg <br>
+                A kép a jobb oldalon jelenik meg, és balról szöveg van mellette <br>
+                Például: <br>
+                <a class="dolt">&lt;img src="szerkezet.png" class="kep" ...&gt;</a> <br>
+                és <br>
+                <a class="dolt">.kep {float:right;}</a> <br>
+                vagy <br>
+                <a class="dolt">&lt;img src="szerkezet.png" align="right"&gt;</a> <br>
+            <p>A cím, a <a class="back">„Passzívházak”</a> egyes szintű címsor stílussal jelenik meg <br>
+                Az &lt;img&gt; tagben helyesen szerepel a <a class="back">title=”Egy passzívház szerkezete”</a> <br>
+                A képnek 1 képpontos szegélye, balra a szövegtől legalább 5 pontos
+                margója van <br></p>
+            <p class="kocka">A hivatkozás kialakítása </p>
+            <p><a class="vastagdolt">„A passzívház tehát attól passzív”</a> szöveg link, amely a megadott oldalra
+                mutat <br>
+                A kapcsos zárójeleket és a benne lévő szöveget törölte </p>
+            <p class="kocka"><a class="vastagdolt">Összesen:</a></p>
+            <p><h3>2. BUD 2017</h3></p>
+            <p class="kocka">Adatbeolvasás és mentés </p>
+            <p>Legalább egy munkalapon az adatok beolvasása, a munkalap elnevezése
+                és a munkafüzet mentése <a class="dolt">BUD2017</a> néven helyes <br>
+                A pont csak akkor jár, ha a szöveg ékezethelyesen szerepel a munkalap
+                <a class="dolt">A1</a>-es cellájától kezdődően. <br>
+                Mindkét munkalapra helyesen töltötte be az adatokat az <a class="dolt">A1</a>-es cellától
+                kezdődően, és mindkét munkalap neve helyes</p>
+            <p class="kocka">Havi forgalom</p>
+            <p>Az <a class="dolt">A185</a>-ös cellába beírta az „<a class="back">Összesen:</a>” szót és a <a class="dolt">C185:Z185</a> cellákba
+                helyesen összegezte a havi járatok és utasok számát <br>
+                Példá:<br>
+                C185-ös cellában: <a class="slim">=SZUM(C3:C183)</a> </p>
+            <p class="kocka">Feltételes formázás </p>
+            <p>Legalább egy város esetén a cella háttérszínét megváltoztatta feltételes
+                formázással, ha az adott városba csak egy hónapban volt forgalom <br>
+                A B3:B183 tartományban feltételes formázással bármilyen kék
+                háttérszínűre állította azokat a cellákat, ahol az adott városba csak egy hónapban volt forgalom <br>
+                Például képlettel megadott szabály esetén: <br>
+                <a class="slim">=DARABÜRES(C3:Z3)=22 <br>
+                vagy <br>
+                =DARAB(C3:Z3)=2</a> </p>
+            <p class="kocka">Városok száma országonként (<a class="dolt"> C2:C54</a>) </p>
+            <p>Legalább egy cellában helyesen határozta meg az adott ország városainak
+                számát <br>
+                Például: <br>
+                <a class=dolt>C2</a>-es cellában: <a class="slim">=DARABHATÖBB('BUD2017'!A3:A183;A2)</a><br>
+                Mindegyik ország városainak a számát helyesen meghatározta <br>
+            Például: <br>
+            <a class="dolt">C2</a>-es cellában: <a class="slim">=DARABHATÖBB('BUD2017'!$A$3:$A$183;A2)</a> </p>
+            <p class="kocka">Utasok száma országonként </p>
+            <p>Legalább egy város esetén meghatározta az éves utasszámot <br>
+                Például:<br>
+                <a class="dolt">BUD2017</a> munkalap <a class="dolt">AC3</a>-as cellában: <br>
+                <a class="slim">=SZUM(D3;F3;H3;J3;L3;N3;P3;R3;T3;V3;X3;Z3) <br>
+                vagy <br>
+                =SZUMHATÖBB(C3:Z3;$C$2:$Z$2;"Utasok")</a> <br>
+                Legalább egy ország esetén helyesen határozta meg az éves utasszámot <br>
+                Például: <br>
+                D2-es cellában: <br>
+                <a class="slim">=SZUMHATÖBB('BUD2017'!AC3:AC183;'BUD2017'!A3:A183;A2)</a> <br> 
+                Minden ország esetén helyesen határozta meg az éves utasszámot <br>
+                Például: <br>
+                D2-es cellában: <br>
+                <a class="slim">=SZUMHATÖBB('BUD2017'!$AC$3:$AC$183;'BUD2017'!$A$3:$A$183;A2)</a> </p>
+            <p class="kocka">Éves utasszám és legnépszerűbb ország </p>
+            <p>A <a class="dolt">G2</a>-es cellában helyesen határozta meg az éves utasszámot, amelyet
+                ezres tagolással és a „<a class="vastagdolt">fő</a>” mértékegységgel jelenített meg <br>
+                Például: <br>
+                <a class="dolt">G2</a>-es cellában: <a class="slim">=SZUM(D2:D54)</a>  <br>
+                Helyesen határozta meg függvénnyel a legnagyobb utasszámot <br>
+                A <a class="dolt">G3</a>-as cellában, a legnagyobb utasszámot felhasználva, helyesen
+                határozta meg a legnépszerűbb ország teljes nevét <br>
+                Például: <br>
+                <a class="dolt">G3</a>-as cellában: <a class="slim">=INDEX(B2:B53;HOL.VAN(MAX(D2:D54);D2:D54;0))</a>  </p>
+            <p class="kocka">Formázási műveletek a <a class="vastagdolt">BUD2017 </a>munkalapon </p>
+            <p>Az első két sorban legalább 12 esetben elvégezte a megfelelő cellák
+                összevonását és az oszlopszélességet úgy állította be, hogy a táblázat
+                minden adata látható <br>
+                Az első két sorban az adatokat tartalmazó cellák háttérszínét
+                világosszürkére állította, és a cellákban lévő tartalmat vízszintesen és
+                függőlegesen középre igazította </p>
+            <p class="kocka"><a class="vastagdolt">Összesen:</a></p>
         <p><input type="number" min="0" placeholder="Elért pontszám" id="a"></p>
         :<span id="eredmeny"></span>
         <li class="nav-item">
