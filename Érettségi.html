@@ -2,13 +2,14 @@
 <html lang="hu"></html>
     <head>
         <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=01.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
         <title>Emeltszintű Informatikai éretségi javítás</title>
     </head>
     <body>
+        <div class="container">
         <p><h1>Informatika</h1></p>
         <p><h2>Gyakorlati vizsga</h2></p> 
         <p><h2>Javítási-Értékelési<br>Útmutató</h2></p>
@@ -189,9 +190,235 @@
                 világosszürkére állította, és a cellákban lévő tartalmat vízszintesen és
                 függőlegesen középre igazította </p>
             <p class="kocka"><a class="vastagdolt">Összesen:</a></p>
+            <p><h3> 3. Űrhajózás </h3></p>
+            <p class="kocka">Adatbázis létrehozása és az adatok importálása </p>
+            <p>Az adatbázis létrehozása <a class="dolt">urhajozas</a> néven, és az adatok importálása
+                a táblákba helyes<br>
+                Nem adható pont eltérő adatbázisnév esetén, illetve, ha valamelyik
+                táblanév nem jó vagy az importálás rossz. </p>
+            <p class="kocka">Mezők típusai és a kulcsok beállítása</p>
+            <p>A táblák összes mezője megfelelő típusú, a <a class="vastagdolt">repules</a> táblában összetett
+                kulcsot hozott létre, a másik két táblában a megadott mezőket kulcsnak
+                választotta <br>
+                Nem adható pont, ha felesleges mezőket vett fel, a kulcsokat nem állította
+                be, vagy téves mezőt állított kulcsnak.</p>
+            <p class="kocka">Mezők megjelenítése a lekérdezésekben és a jelentésben </p>
+            <p >A<a class="vsatagdolt"> 8legenyseg</a> lekérdezés kivételével a lekérdezésekben és a jelentésben
+                felesleges mezőket, illetve kifejezéseket nem jelenített meg <br>
+                A pont nem adható meg, ha négynél kevesebb lekérdezést készített el a
+                vizsgázó. </p>
+            <p class="kocka"><a class="vastagdolt">2legtobbido</a> lekérdezés</p>
+            <p>A<a class="dolt">nev </a> és az<a class="dolt"> urido</a> mező megjelenik, és helyesen szűr a nőkre <br>
+                A legtöbb időt az űrben töltő űrhajósnő nevét és űrben töltött idejét
+                jeleníti meg <br>
+                Például: <br>
+                <a class="slim"> SELECT TOP 1 nev, urido <br>
+                FROM urhajos<br>
+                WHERE nem="N"<br>
+                ORDER BY urido DESC;</a><br>
+                vagy<br>
+                <a class="slim">SELECT nev, urido<br>
+                FROM urhajos<br>
+                WHERE nem='N' AND<br>
+                 urido=(SELECT Max(urido)<br>
+                 FROM urhajos<br>
+                 WHERE nem='N');</a> </p>
+            <p class="kocka"><a class="vastagdolt">3szilveszter</a> lekérdezés </p>
+            <p>A megnevezes mező és a küldetés hossza megjelenik <br>
+                A pont jár akkor is, ha a hosszat megadó kifejezésben csak a két dátum
+                különbsége szerepel. <br>
+                A szűrési feltétel helyes<br>
+                A pont nem bontható. <br>
+                A pont nem adható meg, ha nem kezeli helyesen a több szilvesztert is
+                magában foglaló küldetéseket. <br>
+                Például: <br>
+                <a class="slim">SELECT megnevezes, veg-kezdet+1 <br>
+                FROM kuldetes <br>
+                WHERE Year(kezdet)&lt;Year(veg);</a></p>
+            <p class="kocka"><a class="vastagdolt">4eletkor</a> lekérdezés </p>
+            <p>A nev mező megjelenik, és a táblák kapcsolata helyes <br>
+                Megjeleníti a helyesen kiszámított életkort<br>
+                Minden űrhajósra meghatározza a legkisebb életkort <br>
+                Minden űrhajósra meghatározza a legnagyobb életkort <br>
+                Helyes csoportszűrést alkalmaz a rekordok számára <br>
+                Például: <br>
+                <a class="slim">SELECT nev, Min(Year(kezdet)-szulev), Max(year(kezdet)- <br>
+                szulev) <br>
+                FROM urhajos, repules, kuldetes <br>
+                WHERE urhajos.id=urhajosid AND kuldetesid=kuldetes.id <br>
+                GROUP BY nev <br>
+                HAVING Count(urhajos.id)>1;</a> </p>
+            <p class="kocka"><a class="vastagdolt">5urhajosszam</a> lekérdezés </p>
+            <p>Az orszag mezőt megjelenítette, és e mező szerint csoportosított <br>
+                Az űrhajósok számát helyesen határozta meg, és megjelenítette azt <br>
+                Az adatokat az űrhajósok száma szerint csökkenő sorrendben jelenítette
+                meg <br>
+                Például: <br>
+                <a class="slim">SELECT orszag, Count(*) <br>
+                FROM urhajos <br>
+                GROUP BY orszag <br>
+                ORDER BY Count(*) DESC; </a></p>
+            <p class="kocka"><a class="vastagdolt">6orszagszam</a> lekérdezés </p>
+            <p>A zárójelbeli lekérdezés csak az urhajos tábla adatait használja fel,
+                kimeneti mezőként az orszag szerepel <br>
+                A zárójelbeli lekérdezésben minden ország pontosan egyszer fordul elő <br>
+                A teljes lekérdezést mentette, és az helyes <br>
+                Például: <br>
+                <a class="slim">SELECT Count(allekerdezes.orszag) <br>
+                FROM (SELECT DISTINCT orszag FROM urhajos) AS allekerdezes; </a></p>
+            <p class="kocka"><a class="vastagdolt">7ferfino</a> lekérdezés </p>
+            <p>A megoldás során helyesen határozta meg a küldetések nevét vagy
+                azonosítóját, amelyek az egyik nemhez tartoznak <br>
+                A pont nem bontható. <br>
+                A megoldás során helyesen határozta meg a küldetések nevét vagy
+                azonosítóját, amelyek a másik nemhez tartoznak <br>
+                Az előző két halmaz metszetét helyesen határozta meg <br>
+                Minden küldetésazonosító pontosan egyszer jelenik meg <br>
+                Például:
+                <a class="slim">SELECT DISTINCT kuldetes.megnevezes
+                FROM urhajos AS f, repules AS rf, kuldetes,
+                 repules AS rn, urhajos AS n
+                WHERE f.id=rf.urhajosid
+                 AND rf.kuldetesid=kuldetes.id
+                 AND kuldetes.id=rn.kuldetesid
+                 AND rn.urhajosid=n.id
+                 AND f.nem="F" AND n.nem="N";</a>
+                vagy
+                <a class="slim">SELECT megnevezes
+                FROM kuldetes
+                WHERE id in (SELECT kuldetesid
+                 FROM urhajos, repules
+                 WHERE urhajos.id = urhajosid AND nem='F')
+                AND id in (SELECT kuldetesid
+                 FROM urhajos, repules
+                 WHERE urhajos.id = urhajosid AND nem='N');</a>
+                vagy
+                <a class="vastagdolt">7seged:</a>
+                <a class="slim">SELECT megnevezes, nem
+                FROM urhajos, kuldetes, repules
+                WHERE kuldetes.id = kuldetesid AND urhajos.id = urhajosid
+                GROUP BY megnevezes, nem;</a>
+                és
+                <a class="vastagdolt">7ferfino:</a>
+                <a class="slim">SELECT megnevezes
+                FROM 7seged
+                GROUP BY megnevezes
+                HAVING Count(nem)>1; </a></p>
+            <p class="kocka"><a class="vastagdolt">8legenyseg</a> lekérdezés és jelentés</p>
+            <p>A lekérdezésben a megnevezes, a kezdet, a nev, az orszag és a nem mező
+                megjelenik, és a táblák kapcsolata helyes  <br>
+                A szűrés a küldetés kezdetére helyes <br>
+                Például:
+                SELECT megnevezes, kezdet, nev, orszag, nem
+                FROM kuldetes, repules, urhajos
+                WHERE kuldetes.id=kuldetesid AND urhajosid=urhajos.id
+                AND Year(kezdet) BETWEEN 1991 AND 2000;
+                Jelentés készült <a class="vastagdolt">8legenyseg</a> néven, amelyben megjelenik a küldetés
+                megnevezése, a kezdete, az űrhajós neve, országa és neme <br>
+                A jelentés címe és a címkék tartalma a mintának megfelel, ékezethelyes <br>
+                A jelentésben a küldetés neve és kezdete kiemelve jelenik meg, azon
+                belül név szerint növekvően rendezett <br>
+                Az oszlopok sorrendje a mintának megfelel, és minden adat teljes
+                egészében látható </p>
+            <p class="kocka"><a class="vastagdolt">Összesen:</a></p>
+            <p><h3>4. Céges autók </h3></p>
+            <p>A beadott program csak abban az esetben értékelhető, ha van a választott programozási
+                környezetnek megfelelő forrásállomány, és az tartalmazza a részfeladat megoldásához tartozó
+                forráskódot. </p>
+            <p>A pontozás során futási hibás vagy részlegesen jó megoldás is értékelendő. A részpontszám
+                    jár, ha a kódnak az adott elemnél feltüntetett megfelelő részlete hibátlan. A kiírásért
+                    ékezethelyességtől függetlenül is járnak a pontok. </p>
+            <p class="kocka">Program létrehozása </p>
+            <p>Létezik a program <a class="slim">cegesauto</a> néven <br>
+                A pont csak akkor jár, ha a név pontos, a program fordítási és futtatási
+                hibát nem tartalmaz.</p>
+            <p class="kocka">Üzenetek a képernyőn</p>
+            <p>Van olyan képernyőre írást igénylő feladat, amelynél megjelenítette a
+                feladat sorszámát, és – ha kellett – utalt a felhasználótól bekért tartalomra <br>
+                Minden képernyőre írást igénylő megoldott feladatnál megjelenítette a
+                sorszámot <br>
+                Az előző pont csak akkor jár, ha legalább 4 sorszámozott feladatra adott
+                megoldást. </p>
+            <p class="kocka">A bemeneti fájl feldolgozása és az adatok tárolása </p>
+            <p>Egy adatsort helyesen beolvasott <br>
+                Beolvasta az összes adatot <br>
+                Eltárolta az összes adatot <br>
+                A pont nem bontható. </p>
+            <p class="kocka">Utolsó autó, amit kivittek a parkolóból </p>
+            <p>Helyesen határozta meg az utolsó kivitelt tartalmazó adatsort <br>
+                A napot és az autó rendszámát írta ki a képernyőre <br>
+                A mintának megfelelően írta ki az adatokat a képernyőre <br>
+                A pont jár akkor is, ha nem a helyes eredményt írta ki a minta szerint, de
+                a kiírt értékek számítás eredményei. </p>
+            <p class="kocka">Napi forgalom </p>
+            <p>Bekért a felhasználótól egy nap értéket  <br>
+                Helyesen határozott meg az adott naphoz tartozó legalább egy ki- vagy
+                behajtást <br>
+                Helyesen választotta ki az adott naphoz tartozó összes kihajtást és
+                behajtást <br>
+                A kért adatokat kiírta a képernyőre, legalább egy ki- vagy behajtás esetén <br>
+                Csak az adott napi ki- és behajtásainak kért adatait írta ki a képernyőre <br>
+                A kért adatokat a megadott formában írta ki a képernyőre <br>
+                A pont jár, ha nem a feltételnek megfelelő nap adatait írta ki, de a minta
+                szerint. </p>
+            <p class="kocka">Hónap végén kint lévő autók száma </p>
+            <p>Legalább egy autó esetén helyesen határozta meg, hogy a hónap végén a
+                parkolóban van vagy sem <br>
+                Mindegyik autó esetén, amelyiket legalább egyszer elvittek, helyesen
+                határozta meg, hogy a hónap végén a parkolóban van vagy sem <br>
+                Helyesen határozta meg a kint lévő autók számát <br>
+                A megszámlálás akkor is helyes, ha az autók közül volt olyan, amelyet
+                egyszer sem vittek ki <br>
+                A fenti 4 pont abban az esetben is jár, ha a fentiektől eltérő, de jó
+                algoritmussal határozta meg a helyes eredményt. <br>
+                A számítás eredményét a minta szerint jelenítette meg a képernyőn </p>
+            <p class="kocka">Autók havi statisztikája </p>
+            <p>Legalább egy autó esetén a kezdeti kilométerszámláló-állást helyesen
+                határozta meg <br>
+                Legalább egy autó esetén az utolsó kilométerszámláló-állást helyesen
+                határozta meg <br>
+                Legalább egy autó esetén helyesen határozta meg a hónapban megtett
+                távolságot <br>
+                A pont nem bontható. <br>
+                A pont jár, ha más eljárással dolgozott, de az autó által az adott hónapban
+                megtett kilométereket meghatározta. <br>
+                Mind a 10 autó esetén helyesen határozta meg az adott hónapban megtett
+                kilométert <br>
+                A pont nem bontható. <br>
+                Kiírta a képernyőre az autók rendszámát és a megtett kilométereket <br>
+                A pont jár, ha a megjelenített érték hibás, de számítás eredménye. </p>
+            <p class="kocka">Leghosszabb út</p>
+            <p>Legalább egy utat helyesen határozott meg <br>
+                Legalább egy esetben helyesen határozta meg, hogy az autó egy út során
+                (ki és behajtás között) mekkora távolságot tett meg <br>
+                Helyesen határozta meg az összes út esetén a megtett távolságot <br>
+                A pont nem bontható. <br>
+                Meghatározta a legnagyobb távolságot az utak során <br>
+                A pont nem bontható. <br>
+                A pont jár, ha hibásan határozta meg az utakon megtett kilométereket, de
+                a maximummeghatározás helyes. <br>
+                Helyesen határozta meg a dolgozót, aki a legnagyobb távolságot tette
+                meg <br>
+                A megtett távolságot és a személy azonosítóját a minta szerint
+                megjelenítette a képernyőn </p>
+            <p class="kocka">A <a class="slim">X_menetlevel.txt</a> fájl előállítása</p>
+            <p>Bekért egy rendszámot a felhasználótól <br>
+                Létrehozta a fájlt a megfelelő néven és írt a fájlba <br>
+                A további pontok az állománynév helyességétől függetlenek. <br>
+                A fájlban csak az adott rendszámú autó adatai szerepelnek <br>
+                A fájlban az adott autóhoz tartozó minden út szerepel <br>
+                A pont nem bontható. <br>
+                A kért adatok, a megadott sorrendben szerepelnek <br>
+                A fájlban az adatok sorokra tördelése a mintának megfelelő <br>
+                A mintának megfelelően írta ki a vissza nem hozott autó esetén az
+                adatokat <br>
+                A fájlba a sorokban lévő adatokat a minta szerint – tabulátorokkal tagolva
+                – írta ki </p>
+            <p class="kocka"><a class="vastagdolt">Összesen:</a></p>
         <p><input type="number" min="0" placeholder="Elért pontszám" id="a"></p>
         :<span id="eredmeny"></span>
-        <li class="nav-item">
-           
+    
+
+           </div>
     </body>
 </html>
