@@ -43,3 +43,60 @@ body
 {
     background-color: rgba(255,255,255,1);
 }
+
+.inf
+{
+    text-align: center;
+    font-weight: bold; 
+}
+
+.marg
+{
+    margin-top: 100px ;
+    border-top: 0.5em ;
+    border-style: solid;
+}
+
+.jav
+{
+    font-weight: bold; 
+    margin-top: 100px ;
+    text-align: center;
+}
+
+.gyak
+{
+        margin-top: 150px ;
+        text-align: center;
+        font-weight: bold; 
+}
+
+.sima
+{
+margin-right: 150px;
+margin-left: 25px;
+
+}
+
+.pont
+{
+margin-left:50px ;
+}
+
+.irt
+{
+    margin-right:50px ;
+    font-weight: bold;
+}
+
+span
+{
+    margin-left: 25px;
+}
+
+.nagy
+{
+    font-weight: bold;
+    font-size: 50px;
+    margin-top: 150px ;
+}
