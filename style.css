@@ -29,14 +29,21 @@ font-style: italic;
 
 .back
 {
-    background-color: gray;
+    background-color: lightgrey;
 }
 
 body
 {
     font-size: 1.1em ;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+    background-color:lightblue;
+}
+
+nav
+{
+    border-radius:5px;
+    background-color: whitesmoke;
+    font-size:1.2em;
 }
 
 .container
@@ -55,6 +62,9 @@ body
     margin-top: 100px ;
     border-top: 0.5em ;
     border-style: solid;
+    border-bottom: 0em;
+    border-left: 0em;
+    border-right: 0em;
 }
 
 .jav
@@ -99,4 +109,32 @@ span
     font-weight: bold;
     font-size: 50px;
     margin-top: 150px ;
+}
+
+.tigris
+{
+    margin-bottom: 75px;
+}
+
+h2
+{
+    text-align: center;
+}
+
+.mgit
+{
+    border-top: 0.5em ;
+    border-style: solid;
+    border-bottom: 0em;
+    border-left: 0em;
+    border-right: 0em;
+}
+
+img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px ;
+    margin-bottom: 25px;
 }
